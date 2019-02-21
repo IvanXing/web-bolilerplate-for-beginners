@@ -1,6 +1,6 @@
 //函数参数的默认值
 
-// 1. arrow function
+// 1. arrow function  箭头函数
 
 const another = function() {
 	// function body
@@ -8,10 +8,11 @@ const another = function() {
 		a: 'hello world'
 	}
 }
+
 // ==>
-const C = 'c';
+const C = 'c';  
 const s = () => {
-	const C = 's';
+	const C = 's';    //作用域中没有C即可
 	return {
 		a: 'hello world'
 	}
@@ -46,12 +47,12 @@ add(2, 5, 3) // 10
 
 console.log(5,...[1, 2, 3])
 
-const s = function(){
+const s1 = function(){
 	return () => {
 		console.log(this)
 	}
 };
-s.apply({a:1})()
+s1.apply({a:1})()
 
 // //箭头函数 {}
 // var f = v => v;

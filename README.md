@@ -1,5 +1,43 @@
 # web-bolilerplate-for-beginners
 
+## 主要用来学习ES6
+
+### 1.package.json中
+```
+"scripts": {
+    "a": "echo \"hello world\"",
+    "test": "nodemon ./test",
+    "build": "rimraf dist && webpack",
+    "server": "anywhere --port 8001   ",
+    "start": "opn http://localhost:8080/webpack-dev-server/index.html && webpack-dev-server",
+    "ES6": "babel  -w src/ES6 -d  lib/ES6"
+  }
+```
+```
+npm run ES6   //启动
+
+//控制台执行
+babel  -w src/ES6 -d  lib/ES6  
+// -w ==>  --watch 观察者模式 
+// -d ==>  dir 输出到
+
+//运行结果
+
+src/ES6/class.js -> lib/ES6/class.js
+src/ES6/class1.js -> lib/ES6/class1.js
+src/ES6/enumerate.js -> lib/ES6/enumerate.js
+src/ES6/generator.js -> lib/ES6/generator.js
+src/ES6/iterator.js -> lib/ES6/iterator.js
+src/ES6/let_const.js -> lib/ES6/let_const.js
+src/ES6/module.js -> lib/ES6/module.js
+src/ES6/promise.js -> lib/ES6/promise.js
+src/ES6/函数.js -> lib/ES6/函数.js
+src/ES6/数组扩展.js -> lib/ES6/数组扩展.js
+src/ES6/解构赋值.js -> lib/ES6/解构赋值.js
+
+```
+
+
 ## 安装
 
 ```
