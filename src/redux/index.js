@@ -28,6 +28,7 @@ const reducer = (state, action) => {
 	return Object.assign({}, state, action);
 };
 const store = createStore(reducer, initState);
+//调用store.dispatch才会发起流程
 store.dispatch(action);
 console.log(store.getState());
 
