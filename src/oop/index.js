@@ -41,14 +41,14 @@ var p = new s();
 
 new child('lilei', 10, 'student');
 
-|- title : 'student',
-|- name : 'lilei'
-|- age : 10,
-|- __proto__
-		|- d : 'd'
-		|__proto__
-			|- c: 'c'
-				|- Object...
+// |- title : 'student',
+// |- name : 'lilei'
+// |- age : 10,
+// |- __proto__
+// 		|- d : 'd'
+// 		|__proto__
+// 			|- c: 'c'
+// 				|- Object...
 
 
 
