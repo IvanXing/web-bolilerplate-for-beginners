@@ -38,6 +38,8 @@ function f1() {
 }
 f1()
 
+let t = 2; if(true) { let t = 1 }; console.log(t);
+
 /**
  * 编译后
  * function f1() {
@@ -45,7 +47,7 @@ f1()
   if (true) {
     var _n = 10;
   }
-  console.log(n); // 5
+  console.log(n); // 5     babel发现里面的变量名和外面的变量名相同，就把变量名换一下   各个引擎有不一样的做法
 }
 f1();
  */
