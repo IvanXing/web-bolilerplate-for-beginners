@@ -12,12 +12,25 @@ const another = function() {
 // ==>
 const C = 'c';  
 const s = () => {
-	const C = 's';    //作用域中没有C即可
+	const C = 's';    //作用域中没有C即可,function作用域中上下文中没有const c 所以可以声明
 	return {
 		a: 'hello world'
 	}
 }
 
+//如果返回值非常简单是不用写function body的
+const lit = () => '1';
+lit();           // '1'
+
+
+//ES5中函数的几种调用方法
+var s2 = fn;
+fn.apply(this, [arguments]);
+fn.call(this, 1,2,3,4)
+fn(1, 2, 4, 5)    //执行1+2+4+5... 如何处理动态化参数？？？
+
+
+//参数不定 采用apply  数组扩展
 // 一个function （入参 + 返回值）
 const pa = (...args) => {
 	console.log(args);
@@ -27,16 +40,25 @@ const pa = (...args) => {
 };
 pa.apply(this, [1,2,45]);
 
+
+//解构赋值
 let a = [1,2,3];
 let [c, ...d] = a;
-console.log(d);
+console.log(d);    //d=>[2, 3]
 
 
-// 参数 初始值
+//解构赋值错误写法
+// var arraytest = [1, 2, 3];
+// let[...c, d] = arraytest;
+// console.log(d);
+// SyntaxError: Rest element must be last element
+
+// 支持 参数 初始值定义y
 function log(x, y = 'World') {
   console.log(x, y);
 }
-log('hello'); // log('Hello') // Hello World
+log('hello'); // Hello World
+log('Hello', 'haha');   //Hello haha
 
 
 //rest参数
