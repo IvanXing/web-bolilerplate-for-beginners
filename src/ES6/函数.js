@@ -31,14 +31,15 @@ fn(1, 2, 4, 5)    //执行1+2+4+5... 如何处理动态化参数？？？
 
 
 //参数不定 采用apply  数组扩展
-// 一个function （入参 + 返回值）
+// 一个function （入参 + 返回值）是函数最重要的
 const pa = (...args) => {
 	console.log(args);
 	return args.reduce((pre,cur) => {
 		return pre+cur;
 	}, 0);
 };
-pa.apply(this, [1,2,45]);
+pa(1, 2, 45);
+pa.apply(this, [1,2,45]);     //48
 
 
 //解构赋值
@@ -51,7 +52,7 @@ console.log(d);    //d=>[2, 3]
 // var arraytest = [1, 2, 3];
 // let[...c, d] = arraytest;
 // console.log(d);
-// SyntaxError: Rest element must be last element
+// SyntaxError: Rest element must be last element  数组最后一项才可以
 
 // 支持 参数 初始值定义y
 function log(x, y = 'World') {
@@ -69,12 +70,15 @@ add(2, 5, 3) // 10
 
 console.log(5,...[1, 2, 3])
 
+//函数中this的指向依赖函数对应的调用方式
+
 const s1 = function(){
 	return () => {
 		console.log(this)
 	}
 };
-s1.apply({a:1})()
+s();  //浏览器环境中是window   node环境中是global
+s1.apply({a:1})        //function
 
 // //箭头函数 {}
 // var f = v => v;
